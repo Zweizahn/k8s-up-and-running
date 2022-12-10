@@ -4,9 +4,9 @@ export PREFIX="clik8s"
 export SUFFIX="rg"
 export RG_NAME=1-a4f8045d-playground-sandbox
 #export RG_NAME=$PREFIX-$SUFFIX
-export LOCATION="eastus"
-export CLUSTER_NAME="clik8sup"
-export AKSversion="1.23.12"
+export LOCATION="westus"
+export CLUSTER_NAME="AKS"
+export AKSversion="1.25.2"
 
 # create a new resource group
 #az group create --name $RG_NAME --location $LOCATION
@@ -23,7 +23,3 @@ az aks create \
 --min-count 3 \
 --max-count 5 \
 --load-balancer-sku standard
-
-
-
-
