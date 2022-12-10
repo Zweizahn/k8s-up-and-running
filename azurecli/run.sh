@@ -2,12 +2,14 @@
 
 export PREFIX="clik8s"
 export SUFFIX="rg"
-export RG_NAME=$PREFIX-$SUFFIX
+export RG_NAME=1-a4f8045d-playground-sandbox
+#export RG_NAME=$PREFIX-$SUFFIX
 export LOCATION="eastus"
 export CLUSTER_NAME="clik8sup"
+export AKSversion="1.23.12"
 
 # create a new resource group
-az group create --name $RG_NAME --location $LOCATION
+#az group create --name $RG_NAME --location $LOCATION
 
 # create aks cluster with 3 nodes
 az aks create \
@@ -16,7 +18,7 @@ az aks create \
 --enable-managed-identity \
 -c 3 \
 --ssh-key-value /home/$USER/.ssh/id_rsa.pub \
--k 1.19.7 \
+-k $AKSversion \
 --enable-cluster-autoscaler \
 --min-count 3 \
 --max-count 5 \
